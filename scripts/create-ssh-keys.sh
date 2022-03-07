@@ -7,6 +7,6 @@ if [ -n "$1" ]; then
 fi
 
 
-ssh-keygen -t id_vanbrandaos -C "vanbrandaos@gmail.com" -f "$HOME"/.ssh/"$USER"-"$SERVICE_NAME"_key
+ssh-keygen -t ed25519 -C "vanbrandaos@gmail.com" -f "$HOME"/.ssh/"$USER"-"$SERVICE_NAME"_key
 
 echo -e "KEY CREATED DO NOT FORGET TO UPLOAD THE PUBLIC PART!!!"
