@@ -1,0 +1,24 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Monokai Pro",
+    "editor.fontFamily": "'FantasqueSansMono Nerd Font'",
+    "editor.fontSize": 16.5,
+    "editor.fontWeight": "bold",
+    "window.zoomLevel": 1,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.minimap.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "liveSassCompile.settings.formats": [
+
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/dist/css/"
+        }
+    ],
+    "redhat.telemetry.enabled": false,
+    "json.maxItemsComputed": 500000000,
+    "editor.linkedEditing": true
+}

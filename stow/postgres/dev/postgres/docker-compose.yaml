@@ -1,0 +1,30 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: "postgres"
+    environment:
+      POSTGRES_PASSWORD: "matrix"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ~/.docker-volumes/postgresql:/var/lib/postgresql/data
+    networks:
+      - postgres-network
+  pgAdmin:
+    image: dpage/pgadmin4:latest
+    container_name: "pgAdmin"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "admin@cepel.br"
+      PGADMIN_DEFAULT_PASSWORD: "matrix"
+    ports:
+      - "54320:80"
+    volumes:
+      - ~/.docker-volumes/pgAdmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - postgres-network
+networks: 
+  postgres-network:
+    driver: bridge
