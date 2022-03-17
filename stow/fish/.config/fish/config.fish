@@ -147,10 +147,28 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
+#Personal aliases
+
+alias soma-onedrive='cd ~/OneDrive/SOMA'
+
+alias soma-home='cd /usr/local/soma/'
+
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 alias soma-container='cd ~/dev/soma/soma-container'
+
+alias soma-application='cd ~/dev/soma/soma-container/soma-application'
+
+alias soma-config='cd ~/dev/soma/soma-container/soma-config'
+
+alias soma-entities='cd ~/dev/soma/soma-container/soma-entities'
+
+alias soma-msf='cd ~/dev/soma/soma-container/soma-msf'
+
+alias soma-services='cd ~/dev/soma/soma-container/soma-services'
+
+alias soma-web-apps='cd ~/dev/soma/soma-container/soma-web-apps'
 
 alias postgres-up='cd ~/dev/postgres && docker-compose up -d && cd - > /dev/null'
 
