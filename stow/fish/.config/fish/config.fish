@@ -96,7 +96,11 @@ end
 #Windows aliases
 
 alias win-soma='cd ~/dev/servers/eclipse/tomcat
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory -d ~
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-application
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-services
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-web-apps/apps/config
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-web-apps/apps/diagnostics
 clear'
 
 ## Useful aliases
