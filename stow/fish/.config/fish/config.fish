@@ -93,6 +93,12 @@ function copy
     end
 end
 
+#Windows aliases
+
+alias win-soma='cd ~/dev/servers/eclipse/tomcat
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory -d ~
+clear'
+
 ## Useful aliases
 # Replace ls with exa
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
