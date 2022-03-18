@@ -2,11 +2,6 @@
 
 pacman -Syu --needed $(< pkg.list tr "\n" " ")
 
-pacman -Syu --needed $(< util.list tr "\n" " ")
-
-#verificar seria necessario incluir flatpak na lista do pacman pkg.list e remover o teams da aur
-#flatpak install flathub com.microsoft.Teams 
-
 groupadd docker
 
 usermod -aG docker "$USER"
