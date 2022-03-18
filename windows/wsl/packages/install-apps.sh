@@ -2,6 +2,7 @@
 
 pacman -Syu --needed $(< pkg.list tr "\n" " ")
 
+#pacman -Syu --needed $(< util.list tr "\n" " ")
 
 #groupadd docker
 

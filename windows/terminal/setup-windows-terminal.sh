@@ -1,20 +1,19 @@
 #!/bin/bash
 
 echo 'Insira o nome do seu usuário Windows'
-read windows_user
+read WINDOWS_USER
 
-echo 'Procurando por /mnt/c/Users/'${windows_user}'/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState'
+echo "Procurando por /mnt/c/Users/'${WINDOWS_USER}'/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState"
 
-#if [ -d /mnt/c/Users/$WINDOWS_USER/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState ];
-#then
-#echo 'Configurando o Windows Terminal com arquivo settings.xml e integrando Fish e Starship'
-#else
-#echo "O diretório não é válido. Saindo..."
-#exit
-#fi
+if [ -d /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState ];
+then
+echo 'Configurando o Windows Terminal com arquivo settings.xml e integrando Fish e Starship'
+else
+echo "O diretório não é válido. Saindo..."
+exit
+fi
 
-
-#sudo cp settings.xml /mnt/c/Users/$WINDOWS_USER/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+sudo cp settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
 
 cd /tmp
 git clone https://aur.archlinux.org/nerd-fonts-fantasque-sans-mono.git
@@ -23,14 +22,10 @@ makepkg -si
 
 cd /tmp
 wget https://github.com/belluzj/fantasque-sans/releases/download/v1.8.0/FantasqueSansMono-Normal.zip
-unzip FantasqueSansMono-Normal
-cd FantasqueSansMono-Normal/TTF
-sudo cp FantasqueSansMono-Bold.ttf /mnt/c/Windows/Fonts
-sudo cp FantasqueSansMono-BoldItalic.ttf /mnt/c/Windows/Fonts
-sudo cp FantasqueSansMono-Italic.ttf /mnt/c/Windows/Fonts
-sudo cp FantasqueSansMono-Regular.ttf /mnt/c/Windows/Fonts
+mkdir -p fonts/fantasqueSansMono-Normal
+sudo unzip FantasqueSansMono-Normal.zip -d /tmp/fonts/fantasqueSansMono-Normal
+cd fonts/fantasqueSansMono-Normal/TTF
 cd /tmp
-rm -rf FantasqueSansMono-Normal
 rm -rf FantasqueSansMono-Normal.zip
 
 cd /tmp 
@@ -45,6 +40,7 @@ rm -rf find-the-command
 
 chsh -s /usr/bin/fish
 
+echo '### ATENÇÃO: COPIE AS FONTES EM /tmp/fonts (sempre pasta TTF) para o windows, deixando em C:\Windows\Fonts'
 echo '### Concluído'
 echo 'Reinicie o WSL'
 

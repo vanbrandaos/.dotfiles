@@ -1,6 +1,6 @@
 stow
 fish
-startship
+starship
 exa
 bash
 docker
@@ -12,3 +12,4 @@ shellcheck
 base-devel
 openssh
 wget
+unzip
