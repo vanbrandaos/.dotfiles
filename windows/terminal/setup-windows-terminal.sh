@@ -14,6 +14,7 @@ exit
 fi
 
 sudo cp settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+#ln -s ~/.dotfiles/windows/terminal/settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
 
 cd /tmp
 git clone https://aur.archlinux.org/nerd-fonts-fantasque-sans-mono.git
