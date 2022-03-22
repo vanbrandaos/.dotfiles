@@ -3,6 +3,21 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "down"
+            }
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+shift+c"
+        },
+        {
             "command": "unbound",
             "keys": "ctrl+tab"
         },
@@ -233,17 +248,9 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "newTab"
             },
-            "keys": "ctrl+shift+c"
-        },
-        {
-            "command": 
-            {
-                "action": "swapPane",
-                "direction": "down"
-            }
+            "keys": "ctrl+shift+t"
         },
         {
             "command": 
@@ -253,15 +260,15 @@
             }
         },
         {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "keys": "ctrl+shift+t"
-        },
-        {
             "command": "paste",
             "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane"
+            },
+            "keys": "ctrl+shift+enter"
         },
         {
             "command": 
@@ -270,13 +277,6 @@
                 "direction": "left"
             },
             "keys": "ctrl+shift+left"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane"
-            },
-            "keys": "ctrl+shift+enter"
         },
         {
             "command": 
@@ -404,7 +404,7 @@
     {
         "defaults": 
         {
-            "acrylicOpacity": 0.75,
+            "acrylicOpacity": 0.85,
             "useAcrylic": true
         },
         "list": 
@@ -431,11 +431,11 @@
                 "commandline": "wsl.exe",
                 "font": 
                 {
-                    "face": "Fantasque Sans Mono"
+                    "face": "FantasqueSansMono Nerd Font"
                 },
                 "guid": "{e7904b19-2c9d-4066-9cdc-1321b9dc659f}",
                 "hidden": false,
-                "icon": "\\\\wsl$\\Arch\\home\\soma\\.dotfiles\\windows\\icons\\arch.ico",
+                "icon": "\\\\wsl$\\Arch\\home\\soma\\.dotfiles\\windows\\terminal\\icons\\arch.ico",
                 "name": "Arch",
                 "scrollbarState": "hidden",
                 "startingDirectory": "\\\\wsl$\\Arch\\home\\soma"
