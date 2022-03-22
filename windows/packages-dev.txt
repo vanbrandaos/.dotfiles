@@ -1,0 +1,8 @@
+vcredist140
+openjdk
+git
+yarn
+nodejs
+postgresql12
+maven
+conemu
