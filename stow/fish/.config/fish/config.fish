@@ -98,11 +98,11 @@ end
 alias wsl-update='cd ~/.dotfiles/windows/wsl/ && ./init-services.sh && postgres-up'
 
 alias win-soma='cd ~/dev/servers/eclipse/tomcat && postgres-up
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-application
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-services
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-web-apps/apps/config
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d /home/soma/dev/soma/soma-container/soma-web-apps/apps/diagnostics
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-application
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-services
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/config
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics
 clear'
 
 ## Useful aliases
@@ -165,22 +165,24 @@ alias soma-onedrive='cd ~/OneDrive/SOMA'
 
 alias soma-home='cd /usr/local/soma/'
 
-# Recent installed packages
-alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
-
-alias soma-container='cd ~/dev/soma/soma-container'
-
 alias soma-application='cd ~/dev/soma/soma-container/soma-application'
 
 alias soma-config='cd ~/dev/soma/soma-container/soma-config'
 
 alias soma-entities='cd ~/dev/soma/soma-container/soma-entities'
 
+alias tomcat='cd ~/dev/servers/eclipse/tomcat'
+
 alias soma-msf='cd ~/dev/soma/soma-container/soma-msf'
 
 alias soma-services='cd ~/dev/soma/soma-container/soma-services'
 
 alias soma-web-apps='cd ~/dev/soma/soma-container/soma-web-apps'
+
+# Recent installed packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+
+alias soma-container='cd ~/dev/soma/soma-container'
 
 alias postgres-up='cd ~/dev/postgres && docker-compose up -d && cd - > /dev/null'
 
