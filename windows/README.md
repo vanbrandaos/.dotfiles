@@ -1,10 +1,6 @@
 # New Windows machine
 
-1. Install Chocolatey (run powershell as administrator)
-```bash
-    cd windows/chocolatey
-    powershell -executionpolicy bypass -File .\install-chocolatey.ps1
-```
+1. Install Chocolatey (run powershell as administrator) https://chocolatey.org/install
 2. Install git from Chocolatey
 ```bash
     choco install git    
@@ -14,6 +10,12 @@
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
 4. Use choco like pacman! 
+5. Import your Windows Terminal Settings and install nerd-fonts
+```bash
+    cd windows/terminal
+    ./setup-windows-terminal.sh
+```
+
 
 
 # Setup WSL2 (use Windows Terminal):
@@ -64,15 +66,16 @@ Basically, few things will change.
 
 * The wsl does not have a boot system. For Docker, you can use daemons like 'sudo dockerd' or install a alternative systemd (see https://github.com/arkane-systems/genie).  
 
-
 1. Install git
 ```
     sudo pacman -S git
 ```
 2. Clone dotfiles
 3. Setup SOMA as previous tutorial
-4. Import your Windows Terminal Settings and install nerd-fonts
+
+* Needed install find-the-command package and set fish as default shell.
 ```bash
-    cd windows/terminal
-    ./setup-windows-terminal.sh
+    cd .dotfiles/windows/wsl
+    ./setup-fish.sh
 ```
+

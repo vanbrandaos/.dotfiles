@@ -1,9 +1,8 @@
 vcredist140
-openjdk
+openjdk17
 git
-yarn
 nodejs
+yarn
 postgresql12
 maven
-conemu
 eclipse

@@ -14,7 +14,7 @@ echo "Procurando por /mnt/c/Users/'${WINDOWS_USER}'/AppData/Local/Packages/Micro
 
 if [ -d /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState ];
 then
-echo 'Configurando o Windows Terminal com arquivo settings.xml e integrando Fish e Starship'
+echo 'Configurando o Windows Terminal com arquivo settings.xml'
 else
 echo "O diretório não é válido. Saindo..."
 exit
@@ -22,17 +22,6 @@ fi
 
 sudo cp settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
 #ln -s ~/.dotfiles/windows/terminal/settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-
-cd /tmp 
-git clone https://github.com/agura-lex/find-the-command.git
-cd find-the-command
-yay -S find-the-command
-#makepkg -si
-
-cd /tmp
-rm -rf find-the-command
-
-chsh -s /usr/bin/fish
 
 cd /tmp
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/FantasqueSansMono.zip
