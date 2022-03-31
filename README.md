@@ -1,18 +1,21 @@
 # New machine config
 
 1. Full system update
-2. Install packages from arch repos
+2. Install packages from arch repos. 
 ```bash
     cd packages
     sudo ./install-apps.sh
     ./install-aur.sh
     ./fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)
+    ./install-aur-utils.sh (see list)
+    ./install-pacman-utils.sh 
 ```
 3. Create dev folders and download misc software
 ```bash
     cd scripts
     ./make-dirs.sh
     ./setup-dev.sh
+    ./install-yay.sh
 ```
 4. Link configuration files
 ```bash

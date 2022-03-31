@@ -1,3 +1,2 @@
 microsoft-windows-terminal
 vscode
-eclipse

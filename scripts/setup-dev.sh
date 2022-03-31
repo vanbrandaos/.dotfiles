@@ -25,6 +25,12 @@ mkdir -p ~/dev/eclipse-workspace
 mkdir -p ~/dev/applications/tomcat
 mkdir -p ~/dev/applications/eclipse
 
+# SOMA Home
+mkdir -p /usr/local/soma/
+mkdir -p /usr/local/soma/.https
+mkdir -p /usr/local/soma/conf
+mkdir -p /usr/local/soma/logs
+
 cd ~/dev/applications/tomcat
 
 TOMCAT_FILE='apache-tomcat-9.0.54'

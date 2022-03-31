@@ -1,3 +1,4 @@
 #!/bin/bash
 
-pacman -Syu --needed $(< aur-utils.list tr "\n" " ")
+paru -S --needed $(< aur.list tr "\n" " ")
+#pacman -Syu --needed $(< aur-utils.list tr "\n" " ")
