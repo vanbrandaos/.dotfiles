@@ -3,21 +3,6 @@
     "actions": 
     [
         {
-            "command": 
-            {
-                "action": "swapPane",
-                "direction": "down"
-            }
-        },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+shift+c"
-        },
-        {
             "command": "unbound",
             "keys": "ctrl+tab"
         },
@@ -248,9 +233,17 @@
         {
             "command": 
             {
-                "action": "newTab"
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "ctrl+shift+t"
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "down"
+            }
         },
         {
             "command": 
@@ -260,15 +253,15 @@
             }
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
             "command": 
             {
-                "action": "splitPane"
+                "action": "newTab"
             },
-            "keys": "ctrl+shift+enter"
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command": 
@@ -277,6 +270,13 @@
                 "direction": "left"
             },
             "keys": "ctrl+shift+left"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane"
+            },
+            "keys": "ctrl+shift+enter"
         },
         {
             "command": 
@@ -404,7 +404,7 @@
     {
         "defaults": 
         {
-            "acrylicOpacity": 0.85,
+            "acrylicOpacity": 0.84999999999999998,
             "useAcrylic": true
         },
         "list": 
@@ -439,6 +439,13 @@
                 "name": "Arch",
                 "scrollbarState": "hidden",
                 "startingDirectory": "\\\\wsl$\\Arch\\home\\soma"
+            },
+            {
+                "commandline": "\"C:\\Program Files\\Git\\bin\\bash.exe\" --login -i",
+                "guid": "{555a4440-d95c-4778-a74e-098b640e662a}",
+                "icon": "C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico",
+                "name": "Git Bash",
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
