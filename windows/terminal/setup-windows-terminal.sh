@@ -20,9 +20,10 @@ echo "O diretório não é válido. Saindo..."
 exit
 fi
 
-#sudo cp settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
+cp settings.json /c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
 #ln -s ~/.dotfiles/windows/terminal/settings.json /mnt/c/Users/"$WINDOWS_USER"/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
 
+mkdir /c/wsl
 mkdir /c/wsl/fonts
 
 cd /c/wsl/fonts
@@ -32,7 +33,7 @@ unzip FantasqueSansMono.zip -d /c/wsl/fonts/fantasqueSansMono
 cd /c/wsl/fonts
 rm -rf FantasqueSansMono.zip
 cd /c/wsl/fonts/fantasqueSansMono
-powershell.exe /c start .
+explorer .
 cd ~/.dotfiles/windows/terminal
 
 echo '### Concluído'

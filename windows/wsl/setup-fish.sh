@@ -7,6 +7,6 @@ yay -S find-the-command
 #makepkg -si
 
 cd /tmp
-rm -rf find-the-command
+sudo rm -rf find-the-command
 
-chsh -s /usr/bin/fish
+sudo chsh -s /usr/bin/fish
