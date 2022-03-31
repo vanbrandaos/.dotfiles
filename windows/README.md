@@ -9,12 +9,12 @@
 ```bash
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
-4. Use choco like pacman! 
-5. Import your Windows Terminal Settings and install nerd-fonts
+4. Import your Windows Terminal Settings and install nerd-fonts
 ```bash
     cd windows/terminal
     ./setup-windows-terminal.sh
 ```
+5. Use choco like pacman! 
 
 
 
