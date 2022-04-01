@@ -48,59 +48,79 @@ OR
 
 1. Download from https://github.com/yuk7/ArchWSL and save 'C:\wsl\Arch'.
 2. Navigate and run the installer
-3. Run Arch executable (sucess!)
+3. Run Arch executable (success!)
 4. Setup ArchWSL for user and keyrings using https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/ 
 
 # Known issues in WSL:
 
-- Init system:
-* The wsl does not have a init system. For Docker, you can use daemons like 'sudo dockerd' or install a alternative systemd (see https://github.com/arkane-systems/genie). If you're using W11, see propertie "boot" in wsl.conf file.
+- Init system: WSL does not have a init system. For Docker, you can use daemons like 'sudo dockerd' or install a alternative systemd (see https://github.com/arkane-systems/genie). If you're using W11, see propertie "boot" in wsl.conf file.
 
 ```bash
+[boot]
+command = sudo dockerd start
 
 ```
+wsl.conf beloings under the path /etc/wsl.conf. If the file not there, you can create it yourself. WSL detect the existence of the file and will read its contents. All distributions use this file independently.
 
-- IP address of a WSL2 machine cannot be made static:
-* WSL allows you to set launch configurations on all distribution packages independently using a file located at /etc/wsl.conf. You need set network properties:
+
+- IP address on WSL2 machine cannot be made static.
 ```bash
     [network]
-    hostName = hostName < localhost
+    hostName = hostName < transform to localhost
     generateHosts = true
     generateResolvConf = true
 ```
 Please note that it is observed that changes may not take effect unless you restart the lxssManager service on Windows, or terminate and relaunch the distro.
 
+If localhost is not approved, try alternativas with DNS changes (https://github.com/shayne/go-wsl2-host). My alternative is 'update-hosts.sh'. This script replaces the old ip with the new address.
 
-* My alternative is 'update-hosts.sh'. This script replaces the old ip with the new address. 
 ```bash
     cd windows/wsl
     ./update-hosts.sh
 ```
-For convenience, while on W10, I created an alias in fish called 'wsl-update' that did this job. If you are on W11, add this shell in the startup properties and avoid calling it every time when booting (directly or indirectly)
+For convenience, while on W10, I created an alias in fish called 'wsl-update' that did this job (and started docker). If you are on W11, add this shell in the startup properties and avoid calling it every time when booting (directly or indirectly)
 
+- Launch GUI applications: Only works on W11, if you're W10, try XServer solutions. GUI is not needed for me since i replaced Eclipse with VSCode (with Remote WSL).
+  
 
 # Setup SOMA:
 
 Basically, few things will change. 
-
-*Differences:
-
-* Use install-apps shell from /windows/packages
-```
-    cd .dotfiles/windows/wsl/packages
-    ./install-apps.sh
-```
 
 1. Install git
 ```
     sudo pacman -S git
 ```
 2. Clone dotfiles
-3. Setup SOMA as previous tutorial
+
+*Differences:
+
+On step 2, replace all installations for:
+```
+    cd windows/wsl/packages
+    ./install-apps.sh
+    sudo usermod -aG docker $USER
+```
+
+On step 6, use install-wsl-extensions shell from /windows/wsl. If convenient, install java extensions.
+```
+    cd vscode
+    ./install-java-extensions.sh
+    cd windows/wsl/vscode
+    ./install-wsl-extensions.sh
+```
+
+On step 7, is not necessary download eclipse if you`re not in W11 or dont want use WSLg. My suggestion is use vscode on WSL (with Remote WSL extension) for Java and JavaScript
 
 * Needed install find-the-command package and set fish as default shell.
 ```bash
-    cd .dotfiles/windows/wsl
+    cd windows/wsl
     ./setup-fish.sh
 ```
+
+
+
+
+3. Setup SOMA as previous tutorial
+
 

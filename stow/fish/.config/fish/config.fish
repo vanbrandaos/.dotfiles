@@ -95,7 +95,7 @@ end
 
 #Windows aliases
 
-alias wsl-update='cd ~/.dotfiles/windows/wsl/ && ./init-services.sh && postgres-up'
+alias wsl-update='cd ~/.dotfiles/windows/wsl/ && ./start-services.sh && postgres-up'
 
 alias soma-win='cd ~/dev/servers/eclipse/tomcat && postgres-up
 cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container

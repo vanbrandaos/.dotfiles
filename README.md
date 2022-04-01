@@ -17,20 +17,22 @@
     ./setup-dev.sh
     ./install-yay.sh
 ```
-4. Link configuration files
+4. Create a new SSH key, upload it do github and test it.
+```bash
+    scripts/create-ssh-keys.sh (might have to fix ~/.ssh/config)
+    ssh -T git@github.com
+```
+
+5. Link configuration files
 ```bash
     cd stow
     (probably needs a script to remove existing stuff)
     stow -vt ~ *
 ```
-5. Create a new SSH key, upload it do github and test it.
-```bash
-    scripts/create-ssh-keys.sh (might have to fix ~/.ssh/config)
-    ssh -T git@github.com
-```
 6. Install vscode extensions
 ```bash
     vscode/install-extensions.sh
+    vscode/install-java-extensions.sh *
 ```
 7. Download eclipse and extract to ~/dev/applications/eclipse
 8. Clone soma projects
