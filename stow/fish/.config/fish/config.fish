@@ -101,8 +101,8 @@ alias soma-win='cd ~/dev/servers/eclipse/tomcat && postgres-up
 cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container
 cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-application
 cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-services
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/config
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src
 clear'
 
 ## Useful aliases
