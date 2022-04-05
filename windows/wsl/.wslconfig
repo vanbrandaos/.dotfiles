@@ -5,7 +5,7 @@
 memory=8GB 
 
 # Sets the VM to use two virtual processors
-#processors=2
+#processors=4
 
 
 #guiApplications= true

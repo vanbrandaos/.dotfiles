@@ -1,29 +1,53 @@
 # New Windows machine
 
-1. Install Chocolatey (run powershell as administrator) https://chocolatey.org/install
-2. Install git from Chocolatey 
+1. Install Chocolatey (run powershell as administrator) 
 ```bash
-    choco install git    
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-3. Install packages (after clone this project!):
+*See https://chocolatey.org/install
+
+Before use Scripts PowerShell: PowerShell works with a scripts Execution Policy. By default this value is Restricted. You need set privileges "Bypass" (Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope currentUser) to exec PowerShell scripts or use a -executionpolicy command.
+
+2. Install git and update $PATH (or 'choco install git' and update environment variables)
+```bash
+    cd windows/chocolatey
+    powershell -executionpolicy bypass -File .\install-git.ps1       
+```
+
+3. Ready to use git clone! 
+```bash
+    cd ~
+    git clone https://github.com/vanbrandaos/.dotfiles.git
+```
+
+4. Install packages:
 ```bash
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
-4. Import your Windows Terminal Settings and install nerd-fonts (with GitBash)
+
+5. Use choco like pacman! (choco install program | choco remove program | choco search program)
+
+# Setup Windows Terminal
+
+1. Install Windows Terminal (option 6) with PowerShell as administrator:
+```bash
+    cd windows/chocolatey
+    powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
+```
+
+2. Import your Windows Terminal Settings and install nerd-fonts
 ```bash
     cd windows/terminal
-    ./setup-windows-terminal.sh
+    powershell -executionpolicy bypass -File ./setup-windows-terminal.ps1
 ```
-5. Use choco like pacman! 
 
 
-# Setup WSL2 (use Windows Terminal):
+# Setup WSL2 (PowerShell ADM on Windows Terminal):
 
 *You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11:
 ```bash
     wsl --install
 ```
-
 OR
 
 *If you just prefer not to use the install command and would like step-by-step
@@ -44,12 +68,20 @@ OR
     wsl --set-default-version 2
 ```
 
+
+*Copy .wslconfig file
+```bash
+    Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
+```
+
 # Installing Arch:
 
-1. Download from https://github.com/yuk7/ArchWSL and save 'C:\wsl\Arch'.
-2. Navigate and run the installer
-3. Run Arch executable (success!)
-4. Setup ArchWSL for user and keyrings using https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/ 
+1. Download and install
+```bash
+    cd windows/wsl
+    powershell -executionpolicy bypass -File ./install-arch.ps1    
+```
+2. Setup ArchWSL for user and keyrings using https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/ 
 
 # Known issues in WSL:
 
@@ -61,7 +93,6 @@ command = sudo dockerd start
 
 ```
 wsl.conf beloings under the path /etc/wsl.conf. If the file not there, you can create it yourself. WSL detect the existence of the file and will read its contents. All distributions use this file independently.
-
 
 - IP address on WSL2 machine cannot be made static.
 ```bash
@@ -117,9 +148,6 @@ On step 7, is not necessary download eclipse if you`re not in W11 or dont want u
     cd windows/wsl
     ./setup-fish.sh
 ```
-
-
-
 
 3. Setup SOMA as previous tutorial
 
