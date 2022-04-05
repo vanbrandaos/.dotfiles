@@ -10,8 +10,18 @@ Before use Scripts PowerShell: PowerShell works with a scripts Execution Policy.
 
 2. Install git and update $PATH (or 'choco install git' and update environment variables)
 ```bash
-    cd windows/chocolatey
-    powershell -executionpolicy bypass -File .\install-git.ps1       
+    if (!(Test-Path -Path "C:\Program Files\Git\bin")) {
+    echo "Installing git"
+    choco install git
+    echo "git installed."
+    echo "Updating PATH with C:\Program Files\Git\bin..."
+    $PathTemp = [Environment]::GetEnvironmentVariable('Path', 'User') + ';'
+    $PathTemp += 'C:\Program Files\Git\bin'
+    [Environment]::SetEnvironmentVariable('Path', $PathTemp, 'User')
+    echo "done!"
+    } else {
+    echo "git is already installed."
+    }     
 ```
 
 3. Ready to use git clone! 
