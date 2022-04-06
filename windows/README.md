@@ -1,41 +1,42 @@
-# New Windows machine
+# Setup Windows
+
+*PowerShell works with a scripts Execution Policy. By default this value is Restricted. You need set privileges "Bypass" with:
+- Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope currentUser (Once you close the PowerShell window, it will default back to the original execution policy)
+- User a -executionpolicy command with shell.
 
 1. Install Chocolatey (run powershell as administrator) 
 ```bash
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-*See https://chocolatey.org/install
-
-Before use Scripts PowerShell: PowerShell works with a scripts Execution Policy. By default this value is Restricted. You need set privileges "Bypass" (Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope currentUser) to exec PowerShell scripts or use a -executionpolicy command.
-
+*Fonts: https://chocolatey.org/install*
 2. Install git and update $PATH (or 'choco install git' and update environment variables)
 ```bash
     if (!(Test-Path -Path "C:\Program Files\Git\bin")) {
-    echo "Installing git"
-    choco install git
-    echo "git installed."
-    echo "Updating PATH with C:\Program Files\Git\bin..."
-    $PathTemp = [Environment]::GetEnvironmentVariable('Path', 'User') + ';'
-    $PathTemp += 'C:\Program Files\Git\bin'
-    [Environment]::SetEnvironmentVariable('Path', $PathTemp, 'User')
-    echo "done!"
+        echo "Installing git"
+        choco install git -y
+        echo "Updating PATH with C:\Program Files\Git\bin..."
+        $PathTemp = [Environment]::GetEnvironmentVariable('Path', 'User') + ';'
+        $PathTemp += 'C:\Program Files\Git\bin'
+        [Environment]::SetEnvironmentVariable('Path', $PathTemp, 'User')
+        echo "Done!"
     } else {
-    echo "git is already installed."
+        echo "Git is already installed."
     }     
 ```
-
 3. Ready to use git clone! 
 ```bash
     cd ~
     git clone https://github.com/vanbrandaos/.dotfiles.git
 ```
-
 4. Install packages:
 ```bash
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
-
-5. Use choco like pacman! (choco install program | choco remove program | choco search program)
+5. Use choco like pacman! (choco install program | choco remove program | choco search program). If 
+    *Yes! They have a GUI and you can install Chocolatey GUI via Chocolatey itself by executing:
+    ```bash
+        choco install ChocolateyGUI
+    ```
 
 # Setup Windows Terminal
 
@@ -44,44 +45,39 @@ Before use Scripts PowerShell: PowerShell works with a scripts Execution Policy.
     cd windows/chocolatey
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
-
 2. Import your Windows Terminal Settings and install nerd-fonts
 ```bash
     cd windows/terminal
     powershell -executionpolicy bypass -File ./setup-windows-terminal.ps1
 ```
 
+# Setup WSL2 (run Windows Terminal as administrator and open PowerShell tab):
 
-# Setup WSL2 (PowerShell ADM on Windows Terminal):
-
-*You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11:
+1. Copy .wslconfig file
+```bash
+    Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
+```
+2. Install WSL:
+* Option 1: You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 
 ```bash
     wsl --install
 ```
-OR
+*This option install Ubuntu. You can use 'wsl --install -d <Distribution Name>' to set another distro.*
 
-*If you just prefer not to use the install command and would like step-by-step
-
-1. Install packages-dev (or only Windows Terminal)
-2. Enable WSL
+* Option 2: If you just prefer a clean install
+- Enable WSL
 ```bash
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart 
 ```
-3. Enable Virtual Machine
-```
+- Enable Virtual Machine
+```bash
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
-4. Restart Windows (hehe)
-5. Download and install the linux kernel: https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
-6. Set WSL2 as default version
-```
-    wsl --set-default-version 2
-```
-
-
-*Copy .wslconfig file
+- Restart Windows 
+- Download and install the linux kernel: https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
+-  Set WSL2 as default version
 ```bash
-    Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
+    wsl --set-default-version 2
 ```
 
 # Installing Arch:
@@ -92,73 +88,49 @@ OR
     powershell -executionpolicy bypass -File ./install-arch.ps1    
 ```
 2. Setup ArchWSL for user and keyrings using https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/ 
+*Fonts: https://github.com/yuk7/ArchWSL
 
 # Known issues in WSL:
 
-- Init system: WSL does not have a init system. For Docker, you can use daemons like 'sudo dockerd' or install a alternative systemd (see https://github.com/arkane-systems/genie). If you're using W11, see propertie "boot" in wsl.conf file.
-
+1. WSL does not have a init system. With Docker, you can use daemons like 'sudo dockerd' or install a alternative systemd (see https://github.com/arkane-systems/genie). If you're using W11, see propertie "boot" in wsl.conf file. It's a good idea create a shell to wrap all startup operations.
 ```bash
 [boot]
 command = sudo dockerd start
-
 ```
-wsl.conf beloings under the path /etc/wsl.conf. If the file not there, you can create it yourself. WSL detect the existence of the file and will read its contents. All distributions use this file independently.
+This archive beloings under the path /etc/wsl.conf. If the file not there, you can create it yourself. WSL detect the existence of the file and will read its contents. All distributions use this file independently.
+2. IP address on WSL2 machine cannot be made static (If this is me being an idiot, I'm not the only one)
 
-- IP address on WSL2 machine cannot be made static.
-```bash
-    [network]
-    hostName = hostName < transform to localhost
-    generateHosts = true
-    generateResolvConf = true
-```
-Please note that it is observed that changes may not take effect unless you restart the lxssManager service on Windows, or terminate and relaunch the distro.
+- Custom domain:
 
-If localhost is not approved, try alternativas with DNS changes (https://github.com/shayne/go-wsl2-host). My alternative is 'update-hosts.sh'. This script replaces the old ip with the new address.
-
+To accessing the WSL2 VM from the Windows host, see update-host.sh. This script, when called, updates your Windows hosts file with the WSL2 VM's IP address. Please change hostname.
 ```bash
     cd windows/wsl
     ./update-hosts.sh
 ```
-For convenience, while on W10, I created an alias in fish called 'wsl-update' that did this job (and started docker). If you are on W11, add this shell in the startup properties and avoid calling it every time when booting (directly or indirectly)
+On W10, I created an alias called 'wsl-update' that did this job (and started docker). If you are on W11, add this shell in the startup operations and avoid calling it every time when booting.
 
-- Launch GUI applications: Only works on W11, if you're W10, try XServer solutions. GUI is not needed for me since i replaced Eclipse with VSCode (with Remote WSL).
+*Find another solutions, like Go-WSL2-Host (https://github.com/shayne/go-wsl2-host)*
+
+- Localhost:
+
+Turn off fast startup
+In WSL2, /etc/hosts lists 'localhost' as '127.0.0.1'
+In Windows (build 19041) 'localhost' resolves to ::1
+So the server in WSL was listening on 127.0.0.1 and the browser was trying to reach ::1
+
+*Microsoft already provides a solution to access your Linux services on Windows configuring [networking] tag on wsl.conf archive. 
+
+*Other machines on your local network will not see the WSL network services unless you do some port forwarding (and firewall rules)
+3. Launch GUI applications: Only works on W11, if you're on W10, try VcXsrv Windows X Server. GUI is not needed for me since i replaced Eclipse with VSCode (using Remote WSL extension).
   
+# Setup Arch:
 
-# Setup SOMA:
+Follow the previous tutorial
 
-Basically, few things will change. 
+*If you`re not in W11 or dont want use WSLg, skip all GUI confs. For Eclipse, my suggestion is use vscode on WSL (with Remote WSL extension) for Java and JavaScript
 
-1. Install git
-```
-    sudo pacman -S git
-```
-2. Clone dotfiles
-
-*Differences:
-
-On step 2, replace all installations for:
-```
-    cd windows/wsl/packages
-    ./install-apps.sh
-    sudo usermod -aG docker $USER
-```
-
-On step 6, use install-wsl-extensions shell from /windows/wsl. If convenient, install java extensions.
-```
-    cd vscode
-    ./install-java-extensions.sh
-    cd windows/wsl/vscode
-    ./install-wsl-extensions.sh
-```
-
-On step 7, is not necessary download eclipse if you`re not in W11 or dont want use WSLg. My suggestion is use vscode on WSL (with Remote WSL extension) for Java and JavaScript
-
-* Needed install find-the-command package and set fish as default shell.
+*Needed install find-the-command package and set fish as default shell.
 ```bash
     cd windows/wsl
     ./setup-fish.sh
 ```
-
-3. Setup SOMA as previous tutorial
-
-

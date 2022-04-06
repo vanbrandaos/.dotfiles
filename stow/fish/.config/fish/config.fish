@@ -93,16 +93,14 @@ function copy
     end
 end
 
-#Windows aliases
+# Windows aliases
 
-alias wsl-update='cd ~/.dotfiles/windows/wsl/ && ./start-services.sh && postgres-up'
+alias wsl-update='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh && postgres-up'
 
-alias soma-win='cd ~/dev/servers/eclipse/tomcat && postgres-up
+alias win-soma='cd ~/dev/servers/eclipse/tomcat && postgres-up
 cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-application
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-services
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src
+cmd.exe /c "wt.exe" -w 0 -f -d ~/dev/soma/soma-container/soma-services \; split-pane -d ~/dev/soma/soma-container/soma-application \; focus-tab -t 0
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src
 clear'
 
 ## Useful aliases

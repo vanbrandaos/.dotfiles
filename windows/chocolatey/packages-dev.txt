@@ -6,3 +6,4 @@ yarn
 postgresql12
 maven
 eclipse
+vscode

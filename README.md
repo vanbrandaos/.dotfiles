@@ -1,15 +1,15 @@
 # New machine config
 
-1. Full system update
+1. Full system update 
 2. Install packages from arch repos. 
 ```bash
-    cd packages
-    sudo ./install-apps.sh
-    ./install-aur.sh
-    ./fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)
-    ./install-aur-utils.sh (see list)
-    ./install-pacman-utils.sh 
+    sudo pacman -S git (only needed with WSL)
+    cd packages (or cd packages/wsl with WSL)
+    sudo ./install-apps.sh 
+    ./install-aur.sh (skip with WSL)
+    ./fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)        
 ```
+*Install utilities from /utils directory (skip if you're with WSL)
 3. Create dev folders and download misc software
 ```bash
     cd scripts
@@ -22,7 +22,6 @@
     scripts/create-ssh-keys.sh (might have to fix ~/.ssh/config)
     ssh -T git@github.com
 ```
-
 5. Link configuration files
 ```bash
     cd stow
@@ -31,8 +30,8 @@
 ```
 6. Install vscode extensions
 ```bash
-    vscode/install-extensions.sh
-    vscode/install-java-extensions.sh *
+    vscode/install-extensions.sh (or vscode/wsl/instal-wsl-extensions.sh)
+    vscode/install-java-extensions.sh
 ```
 7. Download eclipse and extract to ~/dev/applications/eclipse
 8. Clone soma projects
