@@ -5,7 +5,7 @@ echo '---------'
 if ((Test-Path -Path "C:\Users\$env:UserName\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState")) {
     echo 'Configurando o Windows Terminal com arquivo settings.xml'    
     echo 'Enviando settings.json para pasta de configuracao WT...' 
-    Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\terminal\settings.json" -Destination "C:\Users\$env:UserName\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
+    Copy-Item "C:\Users\$env:UserName\.dotfiles\dotfiles-windows\terminal\settings.json" -Destination "C:\Users\$env:UserName\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
 
     if (!(Test-Path -Path "C:\wsl\fonts")) {
         Set-Location -Path C:\
