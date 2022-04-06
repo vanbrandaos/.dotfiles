@@ -18,17 +18,10 @@
 ```
 2. Install git and update $PATH
 ```bash
-    if (!(Test-Path -Path "C:\Program Files\Git\bin")) {
-        echo "Installing git"
-        choco install git -y
-        echo "Updating PATH with C:\Program Files\Git\bin..."
-        $PathTemp = [Environment]::GetEnvironmentVariable('Path', 'User') + ';'
-        $PathTemp += 'C:\Program Files\Git\bin'
-        [Environment]::SetEnvironmentVariable('Path', $PathTemp, 'User')
-        echo "Done!"
-    } else {
-        echo "Git is already installed."
-    }     
+    choco install git -y      
+    $PathTemp = [Environment]::GetEnvironmentVariable('Path', 'User') + ';'
+    $PathTemp += 'C:\Program Files\Git\bin'
+    [Environment]::SetEnvironmentVariable('Path', $PathTemp, 'User')  
 ```
 3. Ready to use git clone! 
 ```bash
