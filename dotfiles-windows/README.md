@@ -1,7 +1,8 @@
 
 # Setup Windows
 
-Those are my personal settings for my Windows' environments.
+Those are my personal settings for my Windows' environments. Here I have a bit of PowerShell files for Windows, including common application installation through Chocolatey, and developer-minded Windows configuration defaults.
+
 
 *About PowerShell:*
 
