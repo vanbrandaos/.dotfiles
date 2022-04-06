@@ -1,6 +1,3 @@
-#!/bin/bash
-
-
 echo '### ATENCAO: Ao final do script instale as fontes "FantasqueSansMono Nerd Font" na janela do explorer que abrirA.'
 echo '---------'
 echo '---------'

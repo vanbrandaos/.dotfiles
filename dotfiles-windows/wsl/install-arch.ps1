@@ -1,5 +1,3 @@
-#!/bin/bash
-
 echo '### Baixando Arch...'
 
 if (!(Test-Path -Path "C:\wsl\Arch")) {
