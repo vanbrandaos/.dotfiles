@@ -1,6 +1,8 @@
 
 # Setup Windows
 
+Those are my personal settings for my Windows' environments.
+
 *About PowerShell:*
 
 >PowerShell works with a scripts Execution Policy. By default this value is Restricted. 
