@@ -1,6 +1,6 @@
 # Setup Windows
 
-*PowerShell works with a scripts Execution Policy. By default this value is Restricted. You need set privileges "Bypass" with:
+> *PowerShell works with a scripts Execution Policy. By default this value is Restricted. You need set privileges "Bypass" with:
 - Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope currentUser (Once you close the PowerShell window, it will default back to the original execution policy)
 - User a -executionpolicy command with shell.
 
@@ -8,7 +8,7 @@
 ```bash
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-*Fonts: https://chocolatey.org/install*
+[Fonts](https://chocolatey.org/install)
 
 2. Install git and update $PATH (or 'choco install git' and update environment variables)
 ```bash
@@ -33,20 +33,20 @@
 ```bash
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
-5. Use choco like pacman! (choco install program | choco remove program | choco search program). If 
-    *Yes! They have a GUI and you can install Chocolatey GUI via Chocolatey itself by executing:
-    ```bash
-    choco install ChocolateyGUI
-    ```
+*Use choco like pacman! (choco install program | choco remove program | choco search program). Yes! They have a GUI and you can install Chocolatey GUI via Chocolatey itself by executing:*
+```bash
+choco install ChocolateyGUI
+```
 
-# Setup Windows Terminal
+# Windows Terminal
 
-1. Install Windows Terminal (option 6) with PowerShell as administrator:
+1. Install Windows Terminal (run PowerShell as administrator):
 ```bash
     cd windows/chocolatey
-    powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
+    powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1
+    'type 6 to options'
 ```
-2. Import your Windows Terminal Settings and install nerd-fonts
+2. Import your Windows Terminal settings and install nerd-fonts
 ```bash
     cd windows/terminal
     powershell -executionpolicy bypass -File ./setup-windows-terminal.ps1
@@ -59,39 +59,29 @@
     Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
 ```
 2. Install WSL:
-    * Option 1: You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 
-    ```bash
-    wsl --install
-    ```
-    *This option install Ubuntu. You can use 'wsl --install -d <Distribution Name>' to set another distro.*
-
-    * Option 2: If you just prefer a clean install
-    - Enable WSL
-    ```bash
-    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart 
-    ```
-    - Enable Virtual Machine
-    ```bash
-    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-    ```
-    - Restart Windows 
-    - Download and install the linux kernel: https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
-    -  Set WSL2 as default version
-    ```bash
-    wsl --set-default-version 2
-    ```
-
-# Installing Arch:
-
-1. Download and install
+* Option 1: You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 
 ```bash
-    cd windows/wsl
-    powershell -executionpolicy bypass -File ./install-arch.ps1    
+    wsl --install
 ```
-2. Setup ArchWSL for user and keyrings using https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/ 
-*Fonts: https://github.com/yuk7/ArchWSL
+*This option install Ubuntu. You can use 'wsl --install -d <Distribution Name>' to set another distro.*
 
-# Known issues in WSL:
+* Option 2: If you just prefer a clean install
+- Enable WSL
+```bash
+    dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart 
+```
+- Enable Virtual Machine
+```bash
+    dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+- Restart Windows 
+- Download and install the linux kernel: https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
+-  Set WSL2 as default version
+```bash
+    wsl --set-default-version 2
+```
+
+Warnings:
 
 1. WSL does not have a init system. With Docker, you can use daemons like 'sudo dockerd' or install a alternative systemd (see https://github.com/arkane-systems/genie). If you're using W11, see propertie "boot" in wsl.conf file. It's a good idea create a shell to wrap all startup operations.
 ```bash
@@ -124,11 +114,19 @@ So the server in WSL was listening on 127.0.0.1 and the browser was trying to re
 *Other machines on your local network will not see the WSL network services unless you do some port forwarding (and firewall rules)
 3. Launch GUI applications: Only works on W11, if you're on W10, try VcXsrv Windows X Server. GUI is not needed for me since i replaced Eclipse with VSCode (using Remote WSL extension).
   
-# Setup Arch:
+# ArchWSL:
 
-Follow the previous tutorial
+1. Download and install
+```bash
+    cd windows/wsl
+    powershell -executionpolicy bypass -File ./install-arch.ps1    
+```
+2. Setup ArchWSL for user and keyrings using https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/ 
+*Fonts: https://github.com/yuk7/ArchWSL*
 
-*If you`re not in W11 or dont want use WSLg, skip all GUI confs. For Eclipse, my suggestion is use vscode on WSL (with Remote WSL extension) for Java and JavaScript
+3. Follow the previous tutorial
+
+*If you're not in W11 or dont want use WSLg, skip all GUI confs. For Eclipse, my suggestion is use vscode on WSL (with Remote WSL extension) for Java and JavaScript
 
 *Needed install find-the-command package and set fish as default shell.
 ```bash
