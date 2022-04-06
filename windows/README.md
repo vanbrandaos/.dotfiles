@@ -1,8 +1,10 @@
 # Setup Windows
 
+First, we need run some stuffs on PowerShell:
+
 > *PowerShell works with a scripts Execution Policy. By default this value is Restricted. You need set privileges "Bypass" with:
-- Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope currentUser (Once you close the PowerShell window, it will default back to the original execution policy)
-- User a -executionpolicy command with shell.
+>- Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope currentUser (Once you close the PowerShell window, it will default back to the original execution policy)
+>- User a -executionpolicy command with shell.
 
 1. Install Chocolatey (run powershell as administrator) 
 ```bash
@@ -33,9 +35,10 @@
 ```bash
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
-*Use choco like pacman! (choco install program | choco remove program | choco search program). Yes! They have a GUI and you can install Chocolatey GUI via Chocolatey itself by executing:*
+*Use choco like pacman! (choco install program | choco remove program | choco search program).*
+*Yes! They have a GUI and you can install Chocolatey GUI via Chocolatey itself by executing:*
 ```bash
-choco install ChocolateyGUI
+    choco install ChocolateyGUI
 ```
 
 # Windows Terminal
@@ -44,7 +47,7 @@ choco install ChocolateyGUI
 ```bash
     cd windows/chocolatey
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1
-    'type 6 to options'
+    'choose install package-dev'
 ```
 2. Import your Windows Terminal settings and install nerd-fonts
 ```bash
