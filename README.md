@@ -10,6 +10,7 @@
     ./fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)        
 ```
 *Install utilities from /utils directory (skip if you're with WSL)
+
 3. Create dev folders and download misc software
 ```bash
     cd scripts

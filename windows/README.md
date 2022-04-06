@@ -9,6 +9,7 @@
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 *Fonts: https://chocolatey.org/install*
+
 2. Install git and update $PATH (or 'choco install git' and update environment variables)
 ```bash
     if (!(Test-Path -Path "C:\Program Files\Git\bin")) {
@@ -35,7 +36,7 @@
 5. Use choco like pacman! (choco install program | choco remove program | choco search program). If 
     *Yes! They have a GUI and you can install Chocolatey GUI via Chocolatey itself by executing:
     ```bash
-        choco install ChocolateyGUI
+    choco install ChocolateyGUI
     ```
 
 # Setup Windows Terminal
@@ -58,27 +59,27 @@
     Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
 ```
 2. Install WSL:
-* Option 1: You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 
-```bash
+    * Option 1: You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 
+    ```bash
     wsl --install
-```
-*This option install Ubuntu. You can use 'wsl --install -d <Distribution Name>' to set another distro.*
+    ```
+    *This option install Ubuntu. You can use 'wsl --install -d <Distribution Name>' to set another distro.*
 
-* Option 2: If you just prefer a clean install
-- Enable WSL
-```bash
+    * Option 2: If you just prefer a clean install
+    - Enable WSL
+    ```bash
     dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart 
-```
-- Enable Virtual Machine
-```bash
+    ```
+    - Enable Virtual Machine
+    ```bash
     dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-```
-- Restart Windows 
-- Download and install the linux kernel: https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
--  Set WSL2 as default version
-```bash
+    ```
+    - Restart Windows 
+    - Download and install the linux kernel: https://docs.microsoft.com/en-us/windows/wsl/wsl2-kernel
+    -  Set WSL2 as default version
+    ```bash
     wsl --set-default-version 2
-```
+    ```
 
 # Installing Arch:
 
