@@ -5,7 +5,7 @@ Those are my personal settings for my Windows' environments. Here I have a bit o
 
 *Note: This repository is built around how I use Windows, which just is OS System for host a Linux VM.*
 
-*About PowerShell:*
+About PowerShell:
 
 >PowerShell works with a scripts Execution Policy. By default this value is Restricted. 
 
