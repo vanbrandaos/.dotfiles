@@ -37,6 +37,7 @@
 ```
 4. Install packages:
 ```bash
+    cd dotfiles-windows/chocolatey
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1   
 ```
 *Use choco like pacman! (choco install program | choco remove program | choco search program).*
@@ -49,12 +50,12 @@
 
 1. Install Windows Terminal 
 ```bash
-    cd windows/chocolatey
+    cd dotfiles-windows/chocolatey
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1
 ```
 2. Import settings.json (themes, shortcuts, profiles, etc) and install nerd-fonts
 ```bash
-    cd windows/terminal
+    cd dotfiles-windows/terminal
     powershell -executionpolicy bypass -File ./setup-windows-terminal.ps1
 ```
 
@@ -63,7 +64,7 @@
 
 1. Copy .wslconfig file
 ```bash
-    Copy-Item "C:\Users\$env:UserName\.dotfiles\windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
+    Copy-Item "C:\Users\$env:UserName\.dotfiles\dotfiles-windows\wsl\.wslconfig" -Destination "C:\Users\$env:UserName\"
 ```
 2. Install WSL:
 * Option 1: You must be running Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 
@@ -103,7 +104,7 @@
 
 		To accessing the WSL2 VM from the Windows host, see update-host.sh. This script, when called, updates your Windows hosts file with the WSL2 VM's IP address. Please change hostname.
 		```bash
-		    cd windows/wsl
+		    cd scripts/wsl
 		    ./update-hosts.sh
 		```
 		On W10, I created an alias called 'wsl-update' that did this job (and started docker). If you are on W11, add this shell in the startup operations and avoid calling it every time when booting.
@@ -125,13 +126,13 @@
 
 1. Download and install from [repository](https://github.com/yuk7/ArchWSL) (or use install-arch.ps1)
 ```bash
-    cd windows/wsl
+    cd dotfiles-windows/wsl
     powershell -executionpolicy bypass -File ./install-arch.ps1    
 ```
 2. [Setup ArchWSL for user and keyrings](https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/) 
 3. Follow the [previous tutorial](https://github.com/vanbrandaos/.dotfiles)
 4. Install find-the-command package and set fish as default shell
 ```bash
-    cd windows/wsl
+    cd scripts/wsl
     ./setup-fish.sh
 ```
