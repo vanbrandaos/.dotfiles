@@ -3,6 +3,7 @@
 
 Those are my personal settings for my Windows' environments. Here I have a bit of PowerShell files for Windows, including common application installation through Chocolatey, and developer-minded Windows configuration defaults.
 
+This repository is built around how I use Windows, which is predominantly a host for a Linux VM.
 
 *About PowerShell:*
 
