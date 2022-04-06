@@ -41,7 +41,7 @@
 
 # Windows Terminal
 
-1. Install Windows Terminal 
+1. Install Windows Terminal (option 5)
 ```bash
     cd dotfiles-windows/chocolatey
     powershell -executionpolicy bypass -File .\install-chocolatey-packages.ps1
