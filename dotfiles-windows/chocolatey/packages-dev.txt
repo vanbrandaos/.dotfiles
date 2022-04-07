@@ -1,9 +1,0 @@
-vcredist140
-openjdk17
-git
-nodejs
-yarn
-postgresql12
-maven
-eclipse
-vscode
