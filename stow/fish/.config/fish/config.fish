@@ -96,11 +96,13 @@ end
 # Windows aliases
 alias wslsd='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh'
 
-alias somadirs='cd ~/dev/servers/eclipse/tomcat && postgres-up --title soma-tomcat --suppressApplicationTitle
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-container --suppressApplicationTitle
-cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-services --title soma-service/application --suppressApplicationTitle\; split-pane -s .4 -d ~/dev/soma/soma-container/soma-application --title soma-service/application --suppressApplicationTitle\; focus-tab -t 1 
-cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src --title soma-web-apps --suppressApplicationTitle \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src --title soma-web-apps --suppressApplicationTitle
+alias somadirs='cd ~/dev/servers/eclipse/tomcat && postgres-up 
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-container --suppressApplicationTitle\; split-pane -s .3 -d ~/dev/soma/soma-container/built-config/soma-config move-focus left --title built-config --suppressApplicationTitle
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-services --title soma-services --suppressApplicationTitle\; split-pane -s .4 -d ~/dev/soma/soma-container/soma-application --title soma-application --suppressApplicationTitle move-focus left\; focus-tab -t 1 
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src --title webapps/config --suppressApplicationTitle \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src move-focus left --title webapps/diagnostics --suppressApplicationTitle
 clear'
+
+
 
 ## Useful aliases
 # Replace ls with exa
