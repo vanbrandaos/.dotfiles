@@ -94,21 +94,23 @@ function copy
 end
 
 # Windows aliases
+alias wslsd='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh'
 
-alias wsl-update='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh && postgres-up'
-
-alias win-soma='cd ~/dev/servers/eclipse/tomcat && postgres-up
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container
-cmd.exe /c "wt.exe" -w 0 -f -d ~/dev/soma/soma-container/soma-services \; split-pane -d ~/dev/soma/soma-container/soma-application \; focus-tab -t 0
-cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src
+alias somadirs='cd ~/dev/servers/eclipse/tomcat && postgres-up --title soma-tomcat --suppressApplicationTitle
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-container --suppressApplicationTitle
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-services --title soma-service/application --suppressApplicationTitle\; split-pane -s .4 -d ~/dev/soma/soma-container/soma-application --title soma-service/application --suppressApplicationTitle\; focus-tab -t 1 
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src --title soma-web-apps --suppressApplicationTitle \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src --title soma-web-apps --suppressApplicationTitle
 clear'
+
+alias wincat='cat'
 
 ## Useful aliases
 # Replace ls with exa
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
 alias la='exa -a --color=always --group-directories-first --icons'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first --icons'  # long format
-alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
+alias lt='exa -T --color=always --group-directories-first --icons' # tree listing
+alias lta='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"                                     # show only dotfiles
 
 # Replace some more things with better alternatives
@@ -156,6 +158,17 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
+
+#Git aliases
+
+alias st='status'
+alias co='checkout'
+alias cm='!git add -A && git commit -m'
+alias ci='commit'
+alias br='branch'
+alias df='diff'
+alias lg='log -p'
+alias cm='checkout master'
 
 #Personal aliases
 
