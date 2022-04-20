@@ -2,6 +2,7 @@ stow
 fish
 starship
 exa
+bat
 bash
 docker
 docker-compose

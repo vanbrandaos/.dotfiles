@@ -102,8 +102,6 @@ cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-services --title soma
 cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src --title soma-web-apps --suppressApplicationTitle \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src --title soma-web-apps --suppressApplicationTitle
 clear'
 
-alias wincat='cat'
-
 ## Useful aliases
 # Replace ls with exa
 alias ls='exa -al --color=always --group-directories-first --icons' # preferred listing
