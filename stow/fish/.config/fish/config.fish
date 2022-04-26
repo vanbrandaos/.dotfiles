@@ -102,6 +102,9 @@ cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-services --title soma
 cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src --title webapps/config --suppressApplicationTitle \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src move-focus left --title webapps/diagnostics --suppressApplicationTitle
 clear'
 
+alias bye='powershell.exe /c "wsl --shutdown"
+powershell.exe /c "taskkill /IMF WindowsTerminal.exe"'
+
 
 
 ## Useful aliases
