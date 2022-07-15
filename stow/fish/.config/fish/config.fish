@@ -1,4 +1,4 @@
-﻿## Set values
+## Set values
 # Hide welcome message
 set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
@@ -96,10 +96,9 @@ end
 # Windows aliases
 alias wslsd='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh'
 
-alias somadirs='cd ~/dev/servers/eclipse/tomcat && postgres-up 
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-container --suppressApplicationTitle\; split-pane -s .3 -d ~/dev/soma/soma-container/built-config/soma-config move-focus left --title built-config --suppressApplicationTitle
-cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-services --title soma-services --suppressApplicationTitle\; split-pane -s .4 -d ~/dev/soma/soma-container/soma-application --title soma-application --suppressApplicationTitle move-focus left\; focus-tab -t 1 
-cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/soma-web-apps/apps/config/src/main/webapp-src --title webapps/config --suppressApplicationTitle \; split-pane -d ~/dev/soma/soma-container/soma-web-apps/apps/diagnostics/src/main/webapp-src move-focus left --title webapps/diagnostics --suppressApplicationTitle
+alias devdirs='postgres-up && cd ~/dev/servers/eclipse/tomcat
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/ --title java --suppressApplicationTitle\; split-pane -s .5 -d ~/dev/soma/soma-container/ --title js --suppressApplicationTitle move-focus left 
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-config --suppressApplicationTitle\; split-pane -s .3 -d ~/dev/soma/soma-container/built-config/soma-config move-focus left --title built-config --suppressApplicationTitle \; focus-tab -t 1
 clear'
 
 alias bye='powershell.exe /c "wsl --shutdown"
@@ -192,6 +191,8 @@ alias soma-msf='cd ~/dev/soma/soma-container/soma-msf'
 alias soma-services='cd ~/dev/soma/soma-container/soma-services'
 
 alias soma-web-apps='cd ~/dev/soma/soma-container/soma-web-apps'
+
+alias soma-docker-playground='cd ~/dev/soma/soma-docker-playground'
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
