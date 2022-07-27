@@ -1,4 +1,4 @@
-# New machine config
+# New garuda machine config
 
 1. Full system update 
 2. Clone and setup-all.sh your privates dotfiles
