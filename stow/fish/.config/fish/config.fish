@@ -174,3 +174,45 @@ alias my-onedrive='cd ~/OneDrive/'
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 alias matrix cmatrix
+
+#DEV SOMA
+
+alias postgres-up='cd ~/dev/postgres && docker-compose up -d && cd - > /dev/null'
+
+alias postgres-stop='cd ~/dev/postgres && docker-compose stop && cd - > /dev/null'
+
+alias tomcat='cd ~/dev/servers/eclipse/tomcat'
+
+alias soma-container='cd ~/dev/soma/soma-container'
+
+alias soma-web-container='cd ~/dev/soma/soma-web-container'
+
+alias soma-docker-playground='cd ~/dev/soma/soma-docker-playground'
+
+alias soma-application='cd ~/dev/soma/soma-container/soma-application'
+
+alias soma-config='cd ~/dev/soma/soma-container/soma-config'
+
+alias soma-entities='cd ~/dev/soma/soma-container/soma-entities'
+
+alias soma-msf='cd ~/dev/soma/soma-container/soma-msf'
+
+alias soma-services='cd ~/dev/soma/soma-container/soma-services'
+
+alias soma-web-apps='cd ~/dev/soma/soma-container/soma-web-apps'
+
+alias cepel-vpn-1='sudo openfortivpn -c ~/dev/vpn/cepel-vpn-1'
+
+alias cepel-vpn-2='sudo openfortivpn -c ~/dev/vpn/cepel-vpn-2'
+
+# Windows aliases
+alias wslsd='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh'
+
+
+alias devdirs='postgres-up && cd ~/dev/servers/eclipse/tomcat
+cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/ --title java --suppressApplicationTitle\; split-pane -s .5 -d ~/dev/soma/soma-container/ --title js --suppressApplicationTitle move-focus left 
+cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-config --suppressApplicationTitle\; split-pane -s .3 -d ~/dev/soma/soma-container/built-config/soma-config move-focus left --title built-config --suppressApplicationTitle \; focus-tab -t 1
+clear'
+
+alias bye='powershell.exe /c "wsl --shutdown"
+powershell.exe /c "taskkill /IMF WindowsTerminal.exe"'
