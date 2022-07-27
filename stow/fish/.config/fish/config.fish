@@ -170,10 +170,6 @@ alias cm='checkout master'
 
 alias my-onedrive='cd ~/OneDrive/'
 
-alias postgres-up='cd ~/dev/postgres && docker-compose up -d && cd - > /dev/null'
-
-alias postgres-stop='cd ~/dev/postgres && docker-compose stop && cd - > /dev/null'
-
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
