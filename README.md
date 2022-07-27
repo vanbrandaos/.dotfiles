@@ -35,10 +35,5 @@
     vscode/install-java-extensions.sh
 ```
 7. Download eclipse and extract to ~/dev/applications/eclipse
-8. Clone soma projects
-```bash
-    cd ~/dev/soma/
-    git clone git@github.com:SOMA-App/soma-container.git
-    git clone git@github.com:SOMA-App/soma-web-container.git (* verify scripts)
-```
+8. Clone soma projects on ~/dev/soma.
 9. Development servers - given the sensitive content of some files this step need to be completed manually for now
