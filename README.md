@@ -1,8 +1,7 @@
 # New garuda machine config
 
 1. Full system update 
-2. Clone and setup-all.sh your privates dotfiles
-3. Install packages from arch repos. 
+2. Install packages from arch repos. 
 ```bash
     sudo pacman -S git (only needed with WSL)
     cd packages (or cd packages/wsl with WSL)
@@ -12,18 +11,19 @@
 ```
 *Install utilities from /utils directory (skip if you're with WSL)
 
-4. Create dev folders and download misc software
+3. Create dev folders and download misc software
 ```bash
     cd scripts
     ./make-dirs.sh
     ./setup-dev.sh
     ./install-yay.sh
 ```
-5. Create a new SSH key, upload it do github and test it.
+4. Create a new SSH key, upload it do github and test it.
 ```bash
     scripts/create-ssh-keys.sh (might have to fix ~/.ssh/config)
     ssh -T git@github.com
 ```
+5. Set your dev files on stow dirs
 6. Link configuration files
 ```bash
     cd stow
