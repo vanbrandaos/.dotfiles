@@ -10,11 +10,11 @@
 
 	```bash
     sudo pacman -S git
-	./scripts/install-apps-wsl.sh && ./scripts/install-yay.sh
+	./scripts/wsl/install-apps-wsl.sh && ./scripts/install-yay.sh
 	```	
 3. Create (or copy) a SSH key, upload it do github and test it.
 ```bash
-    ./scripts/create-ssh-keys.sh #./scripts/copy-ssh-from-win.sh
+    ./scripts/create-ssh-keys.sh #./scripts/wsl/copy-ssh-from-win.sh
     ssh -T git@github.com
 ```
 4. Install vscode extensions
@@ -25,7 +25,7 @@
 *	With WSL:
 
 	```bash
-	./scripts/install-extensions-wsl.sh
+	./scripts/wsl/install-extensions-wsl.sh
 	```	
 5. Stow files and create dev folders
 ```bash
@@ -33,8 +33,8 @@
 ```
 6. Setup SOMA environment
 ```bash
-scripts/create-soma-workspace.sh [cepel-user]
+./scripts/create-soma-workspace.sh [cepel-user]
+./scripts/create-soma-home.sh
 ```
 6. Download eclipse and extract to ~/dev/applications/eclipse
-7. 
 *Use .scripts/fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)*        
