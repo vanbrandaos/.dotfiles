@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../dev/soma/soma-container/soma-application"
+		},
+		{
+			"path": "../../dev/soma/soma-container/soma-config"
+		},
+		{
+			"path": "../../dev/soma/soma-container/soma-entities"
+		},
+		{
+			"path": "../../dev/soma/soma-container/soma-msf"
+		},
+		{
+			"path": "../../dev/soma/soma-container/soma-services"
+		},
+		{
+			"path": "../../dev/soma/soma-container/soma-web-apps/apps/api-v1"
+		}
+	],
+	"settings": {
+		"java.dependency.packagePresentation": "hierarchical"
+	}
+}
