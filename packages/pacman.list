@@ -13,3 +13,12 @@ freerdp
 krdc
 base-devel
 openssh
+cmatrix
+libvncserver
+flatpak
+virt-manager 
+qemu-desktop 
+libvirt 
+edk2-ovmf 
+dnsmasq 
+iptables-nft

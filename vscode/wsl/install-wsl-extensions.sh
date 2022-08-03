@@ -1,7 +1,0 @@
-#!/bin/bash
-
-for a in $(< code-wsl-extensions.list tr "\n" " ")
-do
-    echo "Installing extension $a..."
-    code --install-extension "$a"
-done
