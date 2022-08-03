@@ -36,5 +36,6 @@
 ./scripts/create-soma-workspace.sh [cepel-user]
 ./scripts/create-soma-home.sh
 ```
-6. Download eclipse and extract to ~/dev/applications/eclipse
+7. Download eclipse and extract to ~/dev/applications/eclipse
+ 
 *Use .scripts/fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)*        
