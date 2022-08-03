@@ -1,39 +1,40 @@
 # New garuda machine config
 
 1. Full system update 
-2. Install packages from arch repos. 
+2. Install packages 
 ```bash
-    sudo pacman -S git (only needed with WSL)
-    cd packages (or cd packages/wsl with WSL)
-    sudo ./install-apps.sh 
-    ./install-aur.sh (skip with WSL)
-    ./fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)        
+    sudo ./scripts/install-apps.sh && ./scripts/install-aur.sh
+    #./scripts/install-utils.sh 
 ```
-*Install utilities from /utils directory (skip if you're with WSL)
+*	With WSL:
 
-3. Create dev folders and download misc software
+	```bash
+    sudo pacman -S git
+	./scripts/install-apps-wsl.sh && ./scripts/install-yay.sh
+	```	
+3. Create (or copy) a SSH key, upload it do github and test it.
 ```bash
-    cd scripts
-    ./make-dirs.sh
-    ./setup-dev.sh
-    ./install-yay.sh
-```
-4. Create a new SSH key, upload it do github and test it.
-```bash
-    scripts/create-ssh-keys.sh (might have to fix ~/.ssh/config)
+    ./scripts/create-ssh-keys.sh #./scripts/copy-ssh-from-win.sh
     ssh -T git@github.com
 ```
-5. Set your dev files on stow dirs
-6. Link configuration files
+4. Install vscode extensions
 ```bash
-    cd stow
-    (probably needs a script to remove existing stuff)
-    stow -vt ~ *
+    ./scripts/install-extensions.sh (or vscode/wsl/instal-wsl-extensions.sh)
+    ./scripts/install-java-extensions.sh
 ```
-7. Install vscode extensions
+*	With WSL:
+
+	```bash
+	./scripts/install-extensions-wsl.sh
+	```	
+5. Stow files and create dev folders
 ```bash
-    vscode/install-extensions.sh (or vscode/wsl/instal-wsl-extensions.sh)
-    vscode/install-java-extensions.sh
+./scripts/finish-setup.sh 
 ```
-8. Download eclipse and extract to ~/dev/applications/eclipse
-9. Clone soma projects on ~/dev/soma and fish setup.
+6. Setup SOMA environment
+```bash
+scripts/create-soma-workspace.sh [cepel-user]
+```
+6. Download eclipse and extract to ~/dev/applications/eclipse
+7. 
+*Use .scripts/fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)*        
