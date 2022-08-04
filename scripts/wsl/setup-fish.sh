@@ -9,4 +9,4 @@ yay -S find-the-command
 cd /tmp
 sudo rm -rf find-the-command
 
-sudo chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish
