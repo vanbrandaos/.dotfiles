@@ -9,8 +9,6 @@ if type "qtile" >> /dev/null 2>&1
    set -x QT_QPA_PLATFORMTHEME "qt5ct"
 end
 
-export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
-
 # Set settings for https://github.com/franciscolourenco/done
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
@@ -121,10 +119,7 @@ alias untar='tar -zxvf '
 alias wget='wget -c '
 alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias upd='/usr/bin/update'
-alias ..='cd ..'
-alias ...='cd ../..'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'WSL_ip_line
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
@@ -177,36 +172,10 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 alias matrix cmatrix
 
-#DEV SOMA
-alias tomcat='cd ~/dev/servers/eclipse/tomcat'
-
-alias soma-web-container='cd ~/dev/soma/soma-web-container'
-
-alias soma-application='cd ~/dev/soma/soma-container/soma-application'
-
-alias soma-config='cd ~/dev/soma/soma-container/soma-config'
-
-alias soma-entities='cd ~/dev/soma/soma-container/soma-entities'
-
-alias soma-msf='cd ~/dev/soma/soma-container/soma-msf'
-
-alias soma-services='cd ~/dev/soma/soma-container/soma-services'
-
-alias soma-web-apps='cd ~/dev/soma/soma-container/soma-web-apps'
-
-
-# Windows aliases
-alias wslsd='cd ~/.dotfiles/scripts/wsl/ && ./start-services.sh'
-
-
-alias devdirs='postgres-up && cd ~/dev/servers/eclipse/tomcat
-cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/ --title java --suppressApplicationTitle\; split-pane -s .5 -d ~/dev/soma/soma-container/ --title js --suppressApplicationTitle move-focus left 
-cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-config --suppressApplicationTitle\; split-pane -s .3 -d ~/dev/soma/soma-container/built-config/soma-config move-focus left --title built-config --suppressApplicationTitle \; focus-tab -t 1
-clear'
-
-alias bye='powershell.exe /c "wsl --shutdown"
-powershell.exe /c "taskkill /IMF WindowsTerminal.exe"'
-
 if test -f ~/.config/fish/extra_configs.fish
   source ~/.config/fish/extra_configs.fish
+end
+
+if test (grep -c "WSL" /proc/version) != "0"
+  source ~/.config/fish/wsl_config.fish
 end
