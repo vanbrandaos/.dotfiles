@@ -11,6 +11,7 @@
 	```bash
     sudo pacman -S git
 	./scripts/wsl/install-apps-wsl.sh && ./scripts/install-yay.sh
+	./scripts/wsl/setup-fish.sh
 	```	
 3. Create (or copy) a SSH key, upload it do github and test it.
 ```bash
