@@ -16,3 +16,4 @@ wget
 unzip
 htop
 bc
+rsync

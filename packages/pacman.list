@@ -22,3 +22,4 @@ libvirt
 edk2-ovmf 
 dnsmasq 
 iptables-nft
+rsync
