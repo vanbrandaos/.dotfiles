@@ -93,6 +93,11 @@ function copy
     end
 end
 
+function cdls    
+    cd "$(pwd)"/$argv    
+    ls
+end
+
 ## Run paleofetch if session is interactive
 #if status --is-interactive
 #   neofetch
@@ -120,6 +125,7 @@ alias wget='wget -c '
 alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'WSL_ip_line
+alias ls..='cd ../ && ls'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
@@ -133,6 +139,7 @@ alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed pac
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
 alias stowt='stow -vt ~ '
 alias unstow='stow -vDt ~ '
+alias dockerlsall='docker container ls -a --format "table {{ .ID}}\t | {{ .Image}}\t | {{ .RunningFor}}\t | \t{{ .Status}}\t | {{ .Names}}\t"'
 
 # Get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -154,18 +161,19 @@ alias jctl="journalctl -p 3 -xb"
 
 #Git aliases
 
-alias st='status'
-alias co='checkout'
+alias gitstat='git status'
+alias gitout='git checkout'
 alias cm='!git add -A && git commit -m'
-alias ci='commit'
+alias gitsend='git commit'
 alias br='branch'
-alias df='diff'
+alias gitdf='git diff'
 alias lg='log -p'
-alias cm='checkout master'
+alias gitmaster='git checkout master'
 
 #Personal aliases
 
 alias my-onedrive='cd ~/OneDrive/'
+alias somahome='cd ~/dev/servers/eclipse/soma-home/'
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
