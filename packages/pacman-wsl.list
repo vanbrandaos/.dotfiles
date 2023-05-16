@@ -18,3 +18,15 @@ unzip
 htop
 bc
 rsync
+libvncserver
+flatpak
+virt-manager 
+qemu-desktop 
+libvirt 
+edk2-ovmf 
+dnsmasq 
+iptables-nft
+rsync
+postman-bin
+vagrant
+ansible
