@@ -6,6 +6,7 @@ bat
 bash
 docker
 docker-compose
+docker-buildx
 maven
 nodejs
 yarn
