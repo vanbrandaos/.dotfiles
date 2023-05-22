@@ -1,3 +1,4 @@
+CRT_DIR=$(pwd)
 scripts/make-dirs.sh
 
 echo "Stowing config files..."
@@ -5,6 +6,7 @@ echo "Stowing config files..."
 cd stow
 stow -vt ~ *
 
-cd "${0%/*}"/..
+cd "$CRT_DIR"
+#cd "${0%/*}"/..
 
 scripts/fix-remote.sh
