@@ -27,6 +27,5 @@ edk2-ovmf
 dnsmasq 
 iptables-nft
 rsync
-postman-bin
 vagrant
 ansible
