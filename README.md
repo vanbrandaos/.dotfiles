@@ -28,14 +28,13 @@
 	```bash
 	./scripts/wsl/install-extensions-wsl.sh
 	```	
-5. Stow files and create dev folders
+5. Stow .config files
 ```bash
 ./scripts/finish-setup.sh 
 ```
 6. Setup SOMA environment
 ```bash
 ./scripts/create-soma-workspace.sh [cepel-user]
-./scripts/create-soma-home.sh
 ```
 7. Download eclipse and extract to ~/dev/applications/eclipse
  
