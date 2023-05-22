@@ -25,7 +25,5 @@ qemu-desktop
 libvirt 
 edk2-ovmf 
 dnsmasq 
-iptables-nft
-rsync
 vagrant
 ansible
