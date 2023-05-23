@@ -1,4 +1,4 @@
-scripts/install-extensions.sh
+scripts/install-code-extensions.sh
 
 echo "Installing extension  ms-vscode-remote.remote-wsl"
 code --install-extension ms-vscode-remote.remote-wsl

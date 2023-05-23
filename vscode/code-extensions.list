@@ -21,3 +21,14 @@ monokai.theme-monokai-pro-vscode
 
 polymer-tools.polymer-vscode-plugin
 jonwolfe.language-polymer
+
+vscjava.vscode-java-debug
+vscjava.vscode-java-pack
+sohibe.java-generate-setters-getters
+georgewfraser.vscode-javac
+mwpb.java-prettier-formatter
+redhat.java
+vscjava.vscode-maven
+vscjava.vscode-java-dependency
+adashen.vscode-tomcat
+visualstudioexptteam.vscodeintellicode

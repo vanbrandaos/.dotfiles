@@ -10,12 +10,13 @@ cleanup() {
 
 trap 'cleanup' EXIT
 
-SERVICE_NAME=${1-github}
+EMAIL=${1-'vanbrandaos@gmail.com'}
+SERVICE_NAME=${2-github}
 DOMAIN=".com"
 
 echo "Creating keys..."
 
-ssh-keygen -t ed25519 -C "vanbrandaos@gmail.com" -f "$HOME"/.ssh/"$USER"-"$SERVICE_NAME"_key
+ssh-keygen -t ed25519 -C "$EMAIL" -f "$HOME"/.ssh/"$USER"-"$SERVICE_NAME"_key
 
 if [ ! -f "$HOME"/.ssh/config ]; then
     touch "$HOME"/.ssh/config

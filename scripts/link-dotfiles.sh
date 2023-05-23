@@ -6,7 +6,5 @@ echo "Stowing config files..."
 cd stow
 stow -vt ~ *
 
-cd "$CRT_DIR"
+#cd "$CRT_DIR"
 #cd "${0%/*}"/..
-
-scripts/fix-remote.sh
