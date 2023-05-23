@@ -20,7 +20,7 @@
 ```
 4. Install vscode extensions
 ```bash
-    ./scripts/install-extensions.sh (or vscode/wsl/instal-wsl-extensions.sh)
+    ./scripts/install-extensions.sh
     ./scripts/install-java-extensions.sh
 ```
 *	With WSL:
