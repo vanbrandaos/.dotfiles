@@ -8,5 +8,3 @@ clear'
 
 alias bye='powershell.exe /c "wsl --shutdown"
 powershell.exe /c "taskkill /IMF WindowsTerminal.exe"'
-
-alias testwsl='echo teste'

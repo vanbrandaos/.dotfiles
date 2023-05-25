@@ -174,6 +174,7 @@ alias gitmaster='git checkout master'
 
 alias my-onedrive='cd ~/OneDrive/'
 alias somahome='cd ~/dev/servers/eclipse/soma-home/'
+alias dockercls="docker container ls -a --format 'table {{ .ID}}\t | {{ .Image}}\t | {{ .RunningFor}}\t | \t{{ .Status}}\t | {{ .Names}}\t'"
 
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
