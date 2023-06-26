@@ -29,9 +29,9 @@
         ```bash
         ./scripts/fix-remote.sh 
         ```
-    7. Setup SOMA environment
+    7. Setup DEV environment
         ```bash
-        ./scripts/create-soma-workspace.sh [cepel-user]
+        ./scripts/create-dev-workspace.sh [cepel-user]
         ```
         **Use .scripts/fix-trackpad.sh (only needed with multi-touchs while libinput is sucking...)*       
 
@@ -72,9 +72,9 @@
         ```bash
         ./scripts/fix-remote.sh 
         ```
-    9. Setup SOMA environment
+    9. Setup DEV environment
         ```bash
-        ./scripts/create-soma-workspace.sh [cepel-user]
+        ./scripts/create-dev-workspace.sh [cepel-user]
         ```        
 
 
