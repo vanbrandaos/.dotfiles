@@ -16,9 +16,9 @@ cd "${0%/*}"/../../packages
 
 pacman -Syu --needed $(< pacman-wsl.list tr "\n" " ")
 
-vagrant plugin install vagrant-libvirt
+#vagrant plugin install vagrant-libvirt
+vagrant plugin install virtualbox_WSL2
 
 groupadd docker
 
 usermod -aG docker "$USER"
-usermod -aG libvirt "$USER"
