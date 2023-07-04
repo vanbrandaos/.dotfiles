@@ -126,6 +126,7 @@ alias rmpkg="sudo pacman -Rdd"
 alias psmem='ps auxf | sort -nr -k 4'
 alias psmem10='ps auxf | sort -nr -k 4 | head -10'WSL_ip_line
 alias ls..='cd ../ && ls'
+alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
@@ -173,7 +174,9 @@ alias gitmaster='git checkout master'
 #Personal aliases
 
 alias my-onedrive='cd ~/OneDrive/'
-alias somahome='cd ~/dev/servers/eclipse/soma-home/'
+
+alias soma-home='cd ~/dev/servers/eclipse/soma-home/'
+
 alias dockercls="docker container ls -a --format 'table {{ .ID}}\t | {{ .Image}}\t | {{ .RunningFor}}\t | \t{{ .Status}}\t | {{ .Names}}\t'"
 
 # Recent installed packages
