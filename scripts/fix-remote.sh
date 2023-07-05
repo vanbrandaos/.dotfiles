@@ -10,8 +10,10 @@ cleanup() {
 
 trap 'cleanup' EXIT
 
-read -n1 -s -r -p $'Are you vanbrandaos?\nPress ENTER to confirm or CTRL+C to cancel.\n' key
+read -n1 -s -r -p $'Are you vanbrandaos?\nPress ENTER to confirm.\n' key
 
 cd "${0%/*}"/..
 
-git remote set-url origin git@github.com:vanbrandaos/.dotfiles.git
+if [ "$key" = '' ]; then
+   git remote set-url origin git@github.com:vanbrandaos/.dotfiles.git
+fi

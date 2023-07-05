@@ -74,7 +74,7 @@
         ```
     9. Setup DEV environment
         ```bash
-        ./scripts/create-dev-workspace.sh [cepel-user]
+        ./scripts/wsl/create-dev-workspace.sh [cepel-user]
         ```        
 
 

@@ -25,6 +25,11 @@ if [ "$key" = '' ]; then
     ln -s ~/dev/dev-kit/stow/fish/.config/fish/extra_configs.fish ~/.config/fish/extra_configs.fish
     ln -s ~/dev/dev-kit/stow/postgres/dev/postgres/ ~/dev/postgres
 
-    cd dev-kit/
-    scripts/setup-dev.sh "$C_USER"
+    cd ~/dev/dev-kit/scripts/
+    grep -v "chattr" setup-dev.sh > setup-dev-wsl.sh
+    sudo chmod u+x setup-dev-wsl.sh
+    
+    cd ..        
+    scripts/setup-dev-wsl.sh "$C_USER"
+    #rm -rf setup-dev-wsl.sh
 fi
