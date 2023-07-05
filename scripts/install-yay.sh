@@ -4,7 +4,7 @@ echo "Installing yay..."
 
 cd /tmp
 
-rm -rf yay/
+sudo rm -rf yay/
 
 git clone https://aur.archlinux.org/yay.git
 cd yay
