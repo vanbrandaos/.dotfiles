@@ -6,5 +6,7 @@ cmd.exe /c "wt.exe" -w 0 -d ~/dev/soma/soma-container/ --title java --suppressAp
 cmd.exe /c "wt.exe" -w 0 nt --startingDirectory, -d ~/dev/soma/soma-container --title soma-config --suppressApplicationTitle\; split-pane -s .3 -d ~/dev/soma/soma-container/built-config/soma-config move-focus left --title built-config --suppressApplicationTitle \; focus-tab -t 1
 clear'
 
+alias br-keyboard='sudo setxkbmap -model abnt2 -layout br -varian abnt2'
+
 alias bye='powershell.exe /c "wsl --shutdown"
 powershell.exe /c "taskkill /IMF WindowsTerminal.exe"'
