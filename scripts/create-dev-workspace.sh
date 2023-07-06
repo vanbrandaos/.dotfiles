@@ -17,14 +17,19 @@ read -n1 -s -r -p $'At this point your GitHub access should be configured!\nPres
 if [ "$key" = '' ]; then
     mkdir -p ~/dev
     cd ~/dev/
-    git clone git@github.com:SOMA-App/dev-kit.git
+
+    if [ -d ~/dev/dev-kit ]; then 
+        echo "dev-kit is already here. Continuing..."        
+    else    
+        git clone git@github.com:SOMA-App/dev-kit.git
+    fi
     
     #cd dev-kit/stow
-    #stow -vt ~ *
-    mkdir -p ~/.config/fish
-    ln -s ~/dev/dev-kit/stow/fish/.config/fish/extra_configs.fish ~/.config/fish/extra_configs.fish
-    ln -s ~/dev/dev-kit/stow/postgres/dev/postgres/ ~/dev/postgres
+    #sudo stow -vt ~ *
+    #mkdir -p ~/.config/fish
+    #ln -s ~/dev/dev-kit/stow/fish/.config/fish/extra_configs.fish ~/.config/fish/extra_configs.fish
+    #ln -s ~/dev/dev-kit/stow/postgres/dev/postgres/ ~/dev/postgres
 
-    cd dev-kit/
-    scripts/setup-dev.sh "$C_USER"
+    #cd dev-kit/
+    #scripts/setup-dev.sh "$C_USER"
 fi

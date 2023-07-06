@@ -10,10 +10,22 @@ cleanup() {
 
 trap 'cleanup' EXIT
 
-read -n1 -s -r -p $'Are you vanbrandaos?\nPress ENTER to confirm.\n' key
+REMOTE_URL=${1-'git@github.com:vanbrandaos/.dotfiles.git'}
+CONFIRM_CHANGES=false
+
+
+if [ $# = 0 ]; then
+   read -n1 -s -r -p $'Are you vanbrandaos?\nPress ENTER to confirm.\n' key       
+   if [ "$key" = '' ]; then
+      CONFIRM_CHANGES=true
+   fi
+else 
+   REMOTE_URL="$1"
+   CONFIRM_CHANGES=true
+fi
 
 cd "${0%/*}"/..
 
-if [ "$key" = '' ]; then
-   git remote set-url origin git@github.com:vanbrandaos/.dotfiles.git
+if [ $CONFIRM_CHANGES = true ]; then   
+   git remote set-url origin "$REMOTE_URL"
 fi

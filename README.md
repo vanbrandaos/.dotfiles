@@ -13,23 +13,28 @@
 
     3. Create (or copy) a SSH key, upload it do github and test it.
         ```bash
-        ./scripts/create-ssh-keys.sh
+        ./scripts/create-ssh-keys.sh [email-github]
         ssh -T git@github.com
         ```
-    4. Install vscode extensions
+    4. Override .gitconfig (are u lazy?):
+        ```bash
+        ./scripts/setup-custom-git-config.sh [email-github] [full-name]
+        ssh -T git@github.com
+        ```
+    5. Install vscode extensions
         ```bash
         ./scripts/install-code-extensions.sh
         ```
 
-    5. Stow .config files
+    6. Stow .config files
         ```bash
         ./scripts/link-dotfiles.sh 
         ```
-    6. Fix remote
+    7. Fix remote
         ```bash
-        ./scripts/fix-remote.sh 
+        ./scripts/fix-remote.sh [ssh-dotfiles-url]
         ```
-    7. Setup DEV environment
+    8. Setup DEV environment
         ```bash
         ./scripts/create-dev-workspace.sh [cepel-user]
         ```
@@ -51,28 +56,33 @@
 
     4. Create (or copy) a SSH key, upload it do github and test it.
         ```bash
-        ./scripts/create-ssh-keys.sh 
+        ./scripts/create-ssh-keys.sh {email-github}
         #./scripts/wsl/copy-ssh-from-win.sh
         ssh -T git@github.com
         ```
-
-    5. Install vscode extensions
+    5. Override .gitconfig (are u lazy?):
+        ```bash
+        ./scripts/setup-custom-git-config.sh [email-github] [full-name]
+        ssh -T git@github.com
+        ```
+    6. Install vscode extensions
         ```bash
         ./scripts/wsl/install-code-extensions.sh
         ```	
-    6. Setup Fish as shell (and find-the-command):
+    7. Setup Fish as shell (and find-the-command):
         ```bash
         ./scripts/wsl/setup-fish.sh
+        #restart WTerminal
         ```
-    7. Stow .config files
+    8. Stow .config files
         ```bash
         ./scripts/link-dotfiles.sh 
         ```    
-    8. Fix remote
+    9. Fix remote
         ```bash
-        ./scripts/fix-remote.sh 
+        ./scripts/fix-remote.sh [ssh-dotfiles-url]
         ```
-    9. Setup DEV environment
+    10. Setup DEV environment
         ```bash
         ./scripts/wsl/create-dev-workspace.sh [cepel-user]
         ```        
