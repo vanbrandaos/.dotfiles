@@ -5,7 +5,6 @@ exa
 bat
 bash
 docker
-docker-compose
 docker-buildx
 maven
 nodejs

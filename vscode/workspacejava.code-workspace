@@ -16,10 +16,11 @@
 			"path": "../../dev/soma/soma-container/soma-services"
 		},
 		{
-			"path": "../../dev/soma/soma-container/soma-web-apps/apps/api-v1"
+			"path": "../../dev/soma/soma-container/soma-web-apps/api-v1"
 		}
 	],
 	"settings": {
-		"java.dependency.packagePresentation": "hierarchical"
+		"java.dependency.packagePresentation": "hierarchical",
+		"java.configuration.updateBuildConfiguration": "interactive"
 	}
 }

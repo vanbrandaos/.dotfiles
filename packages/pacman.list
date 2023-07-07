@@ -1,7 +1,6 @@
 stow
 kitty
 docker
-docker-compose
 docker-buildx
 maven
 nodejs
