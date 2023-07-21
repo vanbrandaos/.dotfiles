@@ -4,6 +4,12 @@ set fish_greeting
 set VIRTUAL_ENV_DISABLE_PROMPT "1"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
+set -g fish_color_autosuggestion 808080
+set -g fish_color_normal white
+set -g fish_color_command white
+set -g fish_color_error red
+set -g fish_color_param white
+
 ## Export variable need for qt-theme
 if type "qtile" >> /dev/null 2>&1
    set -x QT_QPA_PLATFORMTHEME "qt5ct"

@@ -18,6 +18,8 @@ mkdir -p ~/.config/"Code - OSS"/User
 
 mkdir -p ~/.config/conky
 
+mkdir -p ~/.config/fish
+
 mkdir -p ~/.local/share/applications/
 
 if [ -f ~/.config/starship.toml ]; then

@@ -30,6 +30,7 @@ if [ "$key" = '' ]; then
     #ln -s ~/dev/dev-kit/stow/fish/.config/fish/extra_configs.fish ~/.config/fish/extra_configs.fish
     #ln -s ~/dev/dev-kit/stow/postgres/dev/postgres/ ~/dev/postgres
 
-    #cd dev-kit/
-    #scripts/setup-dev.sh "$C_USER"
+    cd dev-kit/
+    stow -vt ~ *
+    scripts/setup-dev.sh "$C_USER"
 fi
