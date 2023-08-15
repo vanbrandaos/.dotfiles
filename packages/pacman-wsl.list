@@ -12,6 +12,7 @@ yarn
 shellcheck
 base-devel
 openssh
+openfortivpn
 wget
 unzip
 htop
