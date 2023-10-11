@@ -2,7 +2,6 @@ ecmel.vscode-html-css
 ClemensPeters.format-json
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
-jpoissonnier.vscode-styled-components
 
 bierner.lit-html
 skyapps.fish-vscode
@@ -11,16 +10,12 @@ sibiraj-s.vscode-scss-formatter
 vincaslt.highlight-matching-tag
 VisualStudioExptTeam.vscodeintellicode
 
-abusaidm.html-snippets
 hardikpthv.lit-snippets
 xabikos.JavaScriptSnippets
 justinribeiro.Polymer2Snippets
 
 PKief.material-icon-theme
 monokai.theme-monokai-pro-vscode
-
-polymer-tools.polymer-vscode-plugin
-jonwolfe.language-polymer
 
 vscjava.vscode-java-debug
 vscjava.vscode-java-pack
@@ -31,4 +26,3 @@ redhat.java
 vscjava.vscode-maven
 vscjava.vscode-java-dependency
 adashen.vscode-tomcat
-visualstudioexptteam.vscodeintellicode
