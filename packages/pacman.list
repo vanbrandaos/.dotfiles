@@ -2,6 +2,7 @@ stow
 kitty
 docker
 docker-buildx
+docker-compose
 maven
 nodejs
 yarn
