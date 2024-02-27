@@ -14,7 +14,7 @@ echo "Installing WSL applications from pacman..."
 
 cd "${0%/*}"/../../packages
 
-pacman -Syu --needed $(< pacman-wsl.list tr "\n" " ")
+pacman -S --needed $(< pacman-wsl.list tr "\n" " ")
 
 #vagrant plugin install vagrant-libvirt
 vagrant plugin install virtualbox_WSL2

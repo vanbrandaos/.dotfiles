@@ -20,7 +20,8 @@
     ```
 5. Install vscode extensions
     ```bash
-    ./scripts/install-code-extensions.sh
+    ./scripts/install-js-code-extensions.sh
+    ./scripts/install-java-code-extensions.sh
     ```
 
 6. Stow .config files

@@ -146,7 +146,6 @@ alias big="expac -H M '%m\t%n' | sort -h | nl"              # Sort installed pac
 alias gitpkg='pacman -Q | grep -i "\-git" | wc -l'			# List amount of -git packages
 alias stowt='stow -vt ~ '
 alias unstow='stow -vDt ~ '
-alias dockerlsall='docker container ls -a --format "table {{ .ID}}\t | {{ .Image}}\t | {{ .RunningFor}}\t | \t{{ .Status}}\t | {{ .Names}}\t"'
 
 # Get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
@@ -165,17 +164,6 @@ alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
 # Get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
-
-#Git aliases
-
-alias gitstat='git status'
-alias gitout='git checkout'
-alias cm='!git add -A && git commit -m'
-alias gitsend='git commit'
-alias br='branch'
-alias gitdf='git diff'
-alias lg='log -p'
-alias gitmaster='git checkout master'
 
 #Personal aliases
 

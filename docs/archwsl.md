@@ -23,7 +23,8 @@
     ```
 6. Install vscode extensions
     ```bash
-    ./scripts/wsl/install-code-extensions.sh
+	./scripts/install-js-code-extensions.sh
+    ./scripts/install-java-code-extensions.sh
     ```	
 7. Setup Fish as shell (and find-the-command):
     ```bash
