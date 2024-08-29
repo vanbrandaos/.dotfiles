@@ -1,0 +1,17 @@
+[Desktop Entry]
+Comment[pt_BR]=
+Comment=
+Exec=/home/soma/dev/intellij/idea-IC-242.20224.419/bin/idea
+GenericName[pt_BR]=
+GenericName=
+Icon=com.jetbrains.Intellij-Community
+MimeType=
+Name[pt_BR]=idea
+Name=idea
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=
