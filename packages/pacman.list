@@ -5,7 +5,6 @@ docker-buildx
 docker-compose
 maven
 nodejs
-yarn
 firefox
 shellcheck
 google-chrome
@@ -27,4 +26,4 @@ rsync
 postman-bin
 vagrant
 ansible
-obsidian
+pnpm
