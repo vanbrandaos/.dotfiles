@@ -8,7 +8,6 @@ docker
 docker-buildx
 maven
 nodejs
-yarn
 shellcheck
 base-devel
 openssh
@@ -27,3 +26,4 @@ edk2-ovmf
 dnsmasq 
 vagrant
 ansible
+pnpm
